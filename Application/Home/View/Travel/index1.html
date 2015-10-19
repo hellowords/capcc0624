@@ -16,7 +16,7 @@
                     <h2 class="pubtit" style="margin:8px 0;"><a
                             href="__APP__/Home/Travel/travel_spot/city/<{$travel_spot[0].city}>" class="more"
                             style="background: url('__PUBLIC__/Home/Images/home/more.jpg') 0 50% no-repeat;margin:10px 0 0 0;padding:0;"></a><strong
-                            class="f1485a3"><{$travel_spot[0].city}>：景&nbsp;&nbsp;点</strong>
+                            class="f1485a3"><{$city}>：景&nbsp;&nbsp;点</strong>
                     </h2>
                     <ul class="lv_pic_con1">
                         <volist name="travel_spot" id="vo" offset="0" length="3">
@@ -38,9 +38,9 @@
                     </volist>
                 </div>
 
-                <!--吃&住-->
+                <!--美食-->
                 <div class="lvyou_left_box_con1 fr">
-                    <h2 class="pubtit" style="margin:8px 0;"><a href="__APP__/Home/Travel/eat_live.html" class="more" style="background: url('__PUBLIC__/Home/Images/home/more.jpg') 0 50% no-repeat;margin:10px 0 0 0;padding:0;"></a><strong class="f1485a3"><{$travel_spot[0].city}>：吃&nbsp;&nbsp;住</strong>
+                    <h2 class="pubtit" style="margin:8px 0;"><a href="__APP__/Home/Travel/travel_eat/city/<{$city}>" class="more" style="background: url('__PUBLIC__/Home/Images/home/more.jpg') 0 50% no-repeat;margin:10px 0 0 0;padding:0;"></a><strong class="f1485a3"><{$city}>：美&nbsp;&nbsp;食</strong>
                     </h2>
 
                     <div class="lvyou_3p_box">
@@ -48,8 +48,8 @@
                             <li><a href="__APP__/Home/Travel/third_eat/id/<{$travel_eat[0].id}>"><img border="0" src="__PUBLIC__/<{$travel_eat[0]['imgpath']}>"></a></li>
                             <li><a href="__APP__/Home/Travel/third_eat/id/<{$travel_eat[1].id}>"><img border="0" src="__PUBLIC__/<{$travel_eat[1]['imgpath']}>"></a></li>
                         </ul>
-                        <div class="lvyou_3p_box_r"><a href="__APP__/Home/Travel/third_canal/id/<{$travel_live[0].id}>"><img border="0"
-                                                                     src="__PUBLIC__/<{$travel_live[0]['imgpath']}>"></a>
+                        <div class="lvyou_3p_box_r"><a href="__APP__/Home/Travel/third_eat/id/<{$travel_eat[2].id}>"><img border="0"
+                                                                     src="__PUBLIC__/<{$travel_eat[2]['imgpath']}>"></a>
                         </div>
                     </div>
                     <div class="clearfloat"></div>
@@ -65,13 +65,13 @@
 
             <!--攻略-->
             <div class="lvyou_left_box_con">
-                <h2 class="pubtit" style="margin:5px 0;"><a href="__APP__/Home/Travel/travel_story.html" class="more" style="background: url('__PUBLIC__/Home/Images/home/more.jpg') 0 50% no-repeat;margin:10px 0 0 0;padding:0;"></a><strong class="f1485a3"><{$travel_spot[0].city}>：攻&nbsp;&nbsp;略</strong>
+                <h2 class="pubtit" style="margin:5px 0;"><a href="__APP__/Home/Travel/travel_story/city/<{$city}>" class="more" style="background: url('__PUBLIC__/Home/Images/home/more.jpg') 0 50% no-repeat;margin:10px 0 0 0;padding:0;"></a><strong class="f1485a3"><{$city}>：攻&nbsp;&nbsp;略</strong>
                 </h2>
                 <ul class="lvyou_gonglv_ul">
                     <li><a href="__APP__/Home/Travel/third_story/id/<{$travel_story[0].id}>"><img src="__PUBLIC__/<{$travel_story[0]['imgpath']}>"></a></li>
-                    <li><a href="__APP__/Home/Travel/third_story/id/<{$travel_story[0].id}>"><img src="__PUBLIC__/Home/Images/travel/lvyou_pic2.jpg"></a></li>
-                    <li><a href="__APP__/Home/Travel/third_story/id/<{$travel_story[0].id}>"><img src="__PUBLIC__/Home/Images/travel/lvyou_pic2.jpg"></a></li>
-                    <li><a href="__APP__/Home/Travel/third_story/id/<{$travel_story[0].id}>"><img src="__PUBLIC__/Home/Images/travel/lvyou_pic2.jpg"></a></li>
+                    <!--<li><a href="__APP__/Home/Travel/third_story/id/<{$travel_story[0].id}>"><img src="__PUBLIC__/Home/Images/travel/lvyou_pic2.jpg"></a></li>-->
+                    <!--<li><a href="__APP__/Home/Travel/third_story/id/<{$travel_story[0].id}>"><img src="__PUBLIC__/Home/Images/travel/lvyou_pic2.jpg"></a></li>-->
+                    <!--<li><a href="__APP__/Home/Travel/third_story/id/<{$travel_story[0].id}>"><img src="__PUBLIC__/Home/Images/travel/lvyou_pic2.jpg"></a></li>-->
                 </ul>
                 <p class="lvyou_luxian_p">
                     <strong><{$travel_story[0]['title']}></strong><br>
