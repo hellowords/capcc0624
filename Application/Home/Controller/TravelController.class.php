@@ -66,11 +66,17 @@ class TravelController extends CommonController{
 
         $res4= M('travel_story');
         $list = $res4->where(array('City'=>$aid))->select();
+        foreach ($list as $k=>$v)
+        {
+            $list[$k]['content']=R('SubString/subString',array($list[$k]['content'],100));
+        }
         if($list) {
             $this->assign('travel_story',$list);
         }else{
             $this->error('数据错误');
         }
+
+        $this->assign('city',$aid);
 
         $this->display();
 
@@ -95,6 +101,33 @@ class TravelController extends CommonController{
             $list[$k]['content']=R('SubString/subString',array($list[$k]['content'],200));
 
            // $list[$k]['content']=R('SubString/subString',array($list[$k]['content'],0,570));
+
+        }
+        $this->assign('list',$list);
+        $this->assign('page',$show);
+
+        $this->display();
+
+        $this->display('Public:foot');
+
+    }
+    public function travel_eat()
+    {
+        $this->display('Public:head');
+
+        $res1= M('travel_eat');
+        $data = $_GET['city'];
+        $count = $res1->where(array('City'=>$data))->count();
+        $Page  = new \Think\Page($count,4);
+        $show  = $Page->show();
+        $list = $res1->where(array('City'=>$data))->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+        foreach ($list as $k=>$v)
+        {
+
+            //$list[$k]['title']=R('SubString/subString',array($list[$k]['title'],0,44));
+            $list[$k]['content']=R('SubString/subString',array($list[$k]['content'],200));
+
+            // $list[$k]['content']=R('SubString/subString',array($list[$k]['content'],0,570));
 
         }
         $this->assign('list',$list);
@@ -136,10 +169,11 @@ class TravelController extends CommonController{
         $this->display('Public:head');
 
         $res3= M('travel_story');
-        $count =$res3->where()->count();
+        $data = $_GET['city'];
+        $count =$res3->where(array('City'=>$data))->count();
         $Page  = new \Think\Page($count,4);
         $show  = $Page->show();
-        $list = $res3->where()->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+        $list = $res3->where(array('City'=>$data))->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
         foreach ($list as $k=>$v)
         {
             //$list[$k]['title']=R('SubString/subString',array($list[$k]['title'],0,44));
